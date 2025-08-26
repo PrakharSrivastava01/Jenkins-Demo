@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    stages{
+        stage("code"){
+            steps{
+                echo "This is cloning the code"
+                git url:"https://github.com/LondheShubham153/django-notes-app.git", branch:"main"
+                echo "Code cloning successful"
+            }
+        }
+        stage("Build"){
+            steps{
+                echo "This is Building the code"
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "This is testing the code"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "This is deploying the code"
+            }
+        }
+    }
+}
